@@ -52,6 +52,36 @@ We will set up the initial environment for you to build on top of during your Mi
 
 <br>
 
+## Deploy the Evaluation environment
+
+1. Make a new Python virtual environment and activate it.  
+
+    ```bash
+    python -m venv .evalenv
+    ```
+1. Activate Python Virtual Environment
+
+    ```bash
+    source .evalenv/bin/activate
+    ```
+
+1. Install UV to expediate the pip installation
+
+    ```bash
+    pip install uv
+    ```
+
+1. PIP install the requirements into your virtual environment
+    
+    ```bash
+    uv pip install -r ./scripts/requirements.txt
+    ```
+
+1. Change permissions of shell script to deploy Container image
+    ```bash
+    chmod +x ./scripts/02_deploy_container_apps.sh
+    ```
+
 ## Deploy the Azure Resources
 
 1. Start the Microhack on Local or Codespaces
@@ -109,31 +139,6 @@ We will set up the initial environment for you to build on top of during your Mi
 ![Alt text](/media/ragchatterminal.png "RAGCHAT Terminal")
 <br>
 <br>
-
-## Deploy the Evaluation environment
-
-1. Make a new Python virtual environment and activate it.  
-
-    ```bash
-    python -m venv .evalenv
-    ```
-1. Activate Python Virtual Environment
-
-    ```bash
-    source .evalenv/bin/activate
-    ```
-
-1. Install UV to expediate the pip installation
-
-    ```bash
-    python pip install uv
-    ```
-
-1. PIP install the requirements into your virtual environment
-    
-    ```bash
-    uv pip install -r requirements.txt
-    ```
 
 ## Success Criteria
 1. Click on prompt cards to see if it returns answers to these questions. 

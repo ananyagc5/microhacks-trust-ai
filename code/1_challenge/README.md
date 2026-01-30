@@ -72,6 +72,12 @@ Business users and developers have been working conceptually on a use case but a
 
 ### Lab 1 – Instructions for Agent Evaluation
 
+1. Go to the command line terminal in codespaces and submit this script to build an agent.  
+
+    ```bash
+    python ./scripts/03_create_agent.py
+    ```
+
 1. Click on Playgrounds and select the Agent playground from the menus
 
     ![Alt text](/media/CH1_Playground.png "Agent Playground")

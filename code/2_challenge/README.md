@@ -54,7 +54,7 @@ In Challenge 1, we tested our application with a small subset of questions and h
 1. Go to the command line terminal in codespaces and submit this script to run quality metrics.  
 
     ```bash
-    python evals/evaluatemh.py
+    python ./scripts/04_run_evaltarget.py
     ```
 
    If you are using the default settings it will take approximately 1 minute for this to complete. The Target application is running in a container and might need you to rerun this script multiple times when it times-out.  Go into the Microsoft Foundry and review the Automated Evaluations.  Review each Q&A pair for these scores and reason.  
@@ -68,12 +68,12 @@ In Challenge 1, we tested our application with a small subset of questions and h
 1. The second set of evaluations will be for the safety metrics.  Safety evaluations will ensure the answers are appropriate and do not contain harmful or sensitive content. Run this command in the terminal.
 
    ```bash
-   python evals/safety_evaluationmh.py --max_simulations <MAX_RESULTS>
+   python ./scripts/05_safety_evals.py
    ```
    The parameters are:
    * `--max_simulations`: The maximum number of simulated user queries. Default is `200`. The higher the number, the longer the evaluation will take. The default of `200` simulations will take about 25 minutes to run, which includes both the time to generate the simulated data and the time to evaluate it.  
 
-   We recommend keeping the max simulations at '2' for the number of times the script will ask follow-up questions from the main question in your question & answer pair.  For time/cost reasons, we are only using five simulations, but it is recommended for production workloads to test a larger number of simulations. For further instructions on [safety evaluations](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/safety_evaluation.md), review this file for guidance.
+   We recommend keeping the max simulations at '5' for the number of times the script will ask follow-up questions from the main question in your question & answer pair.  For time/cost reasons, we are only using five simulations, but it is recommended for production workloads to test a larger number of simulations. For further instructions on [safety evaluations](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/safety_evaluation.md), review this file for guidance.
  
 1. Evaluate the Safety metrics and share with the team to determine if they are acceptable.  
 
@@ -90,7 +90,7 @@ The AI Red Team Agent will be able to assess risk categories and attack strategi
 1. Execute the Red Team agent script.  The Red Teaming agent will use a library of [attack prompts across categories](https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/develop/run-scans-ai-red-teaming-agent?view=foundry-classic#supported-risk-categories) (privacy, toxicity, jailbreak attempts, etc.) as defined by RiskCategories in PyRIT.
 
    ```bash
-   python evals/redteammh.py
+   python ./scripts/06_redteameval.py 
    ```
 
 1. The [AI Red teaming results](https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/develop/run-scans-ai-red-teaming-agent?view=foundry-classic#results-from-your-automated-scans) typically categorizes findings like: number of attempts where the LLM gave a policy-violating response vs. how many it safely refused. Focus on critical categories: Did the LLM ever reveal the content of its system prompt or internal knowledge (a sign of prompt injection success)? Did it produce disallowed content (e.g., instructions to do something harmful) when provoked?  
