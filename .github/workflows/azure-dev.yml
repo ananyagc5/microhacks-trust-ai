@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - ch3refactor
+      - techconch3
 
 permissions:
   id-token: write
