@@ -34,50 +34,82 @@ This completes the DevOps loop and achieves the **Operate stage of Responsible A
 
 Execute a prebuilt GitHub Actions workflow that automates building and deploying the chatbot while enforcing quality checks before production deployment.
 
-### Key Tasks
-
-- Run evaluation tests from Challenge 2 as part of the pipeline
-- Abort deployment if any test fails
-- Add a manual approval step after tests to reflect an operations checkpoint
-
----
-
 ### Evaluations Using GitHub Actions Pipeline
 
 #### Assumptions
 
-- You already generated ground truth data
-- You already executed and tested automated evaluations in Challenge 2
-- You already forked the origin/upstream repository
+- You already forked this repo.
+- Make sure, you already logged into AZ, AZD and Github.
+- Application should be up and running. The workflow does NOT start your app locally in Github runner env. It calls your already deployed Azure application.
 
 ---
 
 ### Lab 1 – Instructions
 
-1. Go to a fork of the [RAGCHAT](https://github.com/DataSciNAll/azure-search-openai-demo) repo to simulate this lab.
+🧩 Step 1 — Configure the pipeline
 
-1. Click on Action in the Header of this repo to see the deployment workflows.
+Configure the pipeline using below command.
 
-1. Click on ```Evaluate RAG answer flow``` tab to see the latest pipeline evaluation results.
+```azd pipeline config --provider github```
 
-1. Triggering Evaluation by putting ```/evaluate``` in the pull request comment section to trigger the workflow
+🧩 Step 2 — Answer setup prompts
 
-![git eval trigger](../../media/gitevaltrigger.png)
+Since you are setting the Action workflow first time in your forked repo, it will setup the default version of azure-dev.yml file.
 
-1. Go to GitHub Actions and click **Evaluate RAG answer flow** to see the workflow status
+The default azure-dev.yml file, which contains a basic workflow to help you get started, is missing from your project.
+? Would you like to add it now? Yes
 
-![git eval status1](../../media/gitevalstatus1.png)
+Follow the questions and choose the right option as per below guideline.
 
-![git eval status2](../../media/gitevalstatus2.png)
+- Log in using Github CLI – YES
+- Preferred protocol – HTTPS
+- Authenticate git with your GitHub Credential – YES
+- This will open a web browser to authenticate, copy and enter the code in browser.
+- Select “Federated Service Principal (SP + OIDC)” to authenticate the pipeline to Azure
 
-1. Evaluation Results
-    - Once evaluation completes, results are published directly in the GitHub Pull Request
-    - Status notifications are also sent via email
-    - After testing, the workflow can be updated to run only when changes are merged into `main` or `master`
+![CH3-Gitazdpipeconfig](../../media/CH3-Gitazdpipeconfig.jpg)
 
-![git pr eval result](../../media/gitprevalresult.png)
+You will see ```.github/workflows``` directory gets created in your branch with default azure-dev.yml file.
 
-![git pr eval result email](../../media/gitevalresultemail.png)
+Go to Actions, click on ```Github Actions Evaluation Workflow``` and see the initial run.
+
+🧩 Step 3 — Capture Service Principal details
+
+Get the App name from pipeline config output you executed above - it shows something like this “Creating service principal az-dev-XXXXXXXXXXX (30XXXXXXXXXXXXXXXX)”
+
+Go to Microsoft Entra ID —> Enterprise Applications —> Search using your app name —> Get the object ID
+
+🧩 Step 4 — Assign Azure permissions
+
+Go to Azure Portal —> Resource group —> Select Foundry Resource —> Assign the role ```Cognitive Services OpenAI Contributor``` —> Select user, group or Service principal —> Search using your app name or object ID —> Review and Assign
+
+Now, GitHub actions evaluation workflow is ready for the trigger.
+
+🧩 Step 5 — Trigger your first run
+
+Do minor change in main branch and push it, it should trigger the workflow pipeline.
+
+Go to GitHub Actions and click ```Github Actions Evaluation Workflow``` to see the workflow status
+
+![CH3-chkevalworkflowrun](../../media/CH3-chkevalworkflowrun.jpg)
+
+🧩 Step 6 — View evaluation results
+
+Once the workflow gets completed, it will publish results in your Foundry.
+
+![CH3-FoundryEval1](../../media/CH3-FoundryEval1.jpg)
+
+![CH3-FoundryEval2](../../media/CH3-FoundryEval2.jpg)
+
+🚀 Production Recommendations
+
+Modify your trigger based on Pull Request merge logic.
+
+Benefits:
+- Evaluate only PR changes
+- Avoid unnecessary runs
+- Cleaner CI costs
+- Better developer workflow
 
 ---
 
