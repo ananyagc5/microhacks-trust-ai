@@ -259,7 +259,7 @@ This achieves the **Operate capability of Responsible AI**.
 
 ## Learning Resources
 
-- [Best Practices](https://azure.microsoft.com/en-us/blogagent-factory-top-5-agent-observability-best-practices-for-reliable-ai/)
+- [Best Practices](https://azure.microsoft.com/en-us/blog/agent-factory-top-5-agent-observability-best-practices-for-reliable-ai/)
 
 - [Live metrics](https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream?tabs=otel#get-started)
 
@@ -268,8 +268,6 @@ This achieves the **Operate capability of Responsible AI**.
 - [Observability basics](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability?view=foundry-classic)
 
 - [AI Red team](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-red-teaming-agent?view=foundry-classic)
-
-- [Upgrade your Azure OpenAI resource to Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/upgrade-azure-openai?view=foundry-classic)
 
 </br>
 </br>
