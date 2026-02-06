@@ -80,7 +80,7 @@ If you want to learn more about Trustworthy AI, here are further resources.
 
 ## Contributing
 
-We appreciate your interest in contributing to this project! Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) page for detailed guidelines on how to contribute, including information about the Contributor License Agreement (CLA), code of conduct, and the process for submitting pull requests.
+We appreciate your interest in contributing to this project! Please refer to the [CONTRIBUTING](./CONTRIBUTING.md) page for detailed guidelines on how to contribute, including information about the Contributor License Agreement (CLA), code of conduct, and the process for submitting pull requests.
 
 Thank you for your support and contributions!
 
