@@ -79,7 +79,7 @@ For Codespaces, go into your web browser and login to GitHub.
 
     a. Open a terminal window for local deployments and confirm prerequisites are complete
         
-    * <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your GitHub account.  This is a requirement to FORK the repo into your account for CH3 due to GitHub Actions.
+    * <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your GitHub account.  This is a requirement to fork the repo into your account for CH3 due to GitHub Actions.
         
     * Clone the <u>**FORKED REPO**</u> in your GitHub account to your local environment by running the following command:
 
