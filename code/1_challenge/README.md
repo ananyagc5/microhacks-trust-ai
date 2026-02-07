@@ -2,7 +2,7 @@
 
 ## Overview
 
-Contoso Electronics is piloting an internal HR Q&A application where employees can ask about benefits and policies. The chat agent retrieves answers from policy documents with citations. Chat applications are typically graded on functionality and not impact on end-users. We want to help developers and sponsors gain trust in their applications in the early stages of the development cycle while gaining confidence in its feasibility. In this challenge, we will work in the Planning phase to prototype our application through model selection, context engineering, and manual evaluation. The purpose of the planning phase is to green light our concept into a working application and understand its strengths and limitations to better design it for the Build Phase.
+Contoso Electronics is piloting an internal HR Q&A application where employees can ask about benefits and policies. The chat agent retrieves answers from policy documents with citations. Chat applications are typically graded on functionality and not on the impact on end-users. We want to help developers and sponsors gain trust in their applications in the early stages of the development cycle while gaining confidence in its feasibility. In this challenge, we will work in the Planning phase to prototype our application through model selection, context engineering, and manual evaluation. The purpose of the planning phase is to green light our concept into a working application and understand its strengths and limitations to better design it for the Build Phase.
 <br>
 
 ## Tools & Config Needed
@@ -43,7 +43,7 @@ Business users and developers have been working conceptually on a use case but a
 
 ---
 
-### Lab 1 – Instructions for Model Selection
+### Lab 1.1.1 – Instructions for Model Selection
 
 1. Go into the Foundry project via the Azure Portal
 
@@ -67,7 +67,7 @@ Business users and developers have been working conceptually on a use case but a
 
 ---
 
-### Lab 1 – Instructions for Agent Evaluation
+### Lab 1.1.2 – Instructions for Agent Evaluation
 
 1. Go to the command line terminal in codespaces and submit this script to build an agent.  
 
@@ -103,7 +103,7 @@ Business users and developers have been working conceptually on a use case but a
 
 <br>
 
-## Lab 2 – Responsible AI Impact Assessment
+## Lab 1.2 – Responsible AI Impact Assessment
 
 Early in the Planning phase, an [Impact Assessment](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Template.pdf) helps govern the Generative AI application. In this lab, an example Impact assessment is shared with you to review.  Review the assessment and for each risk identify the quality or safety metrics that are in scope.
 
@@ -111,7 +111,7 @@ Conducting this Responsible AI Impact Assessment not only mitigates risks but al
 
 ---
 
-### Lab 2 – Instructions
+### Lab 1.2.1 – Instructions
 
 * There are four risks in the impact assessment.  Review each risk and compare them against the [quality & safety metrics](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability?view=foundry-classic#what-are-evaluators) setup in Foundry as evaluators.  This workflow will help you in the BUILD phase to setup evaluations and monitors to ensure the application is in compliance with your standards.
 
@@ -161,7 +161,7 @@ Conducting this Responsible AI Impact Assessment not only mitigates risks but al
 
 <br>
 
-## Lab 3 – Guardrails and Evaluations
+## Lab 1.3 – Guardrails and Evaluations
 
 ### Objective
 
@@ -176,17 +176,17 @@ Configure guardrail policies and run automated evaluations in Microsoft Foundry 
 
 ---
 
-### Lab 3 – Instructions
+### Lab 1.3.1 – Instructions
 
 1. Create a guardrail policy- https://learn.microsoft.com/en-us/azure/ai-foundry/control-plane/quickstart-create-guardrail-policy?view=foundry&viewFallbackFrom=foundry-classic
 
     ![Alt text](/media/CH1_Operate.png "Guardrails")
 
-1. Click on ```Content Filters``` above the Guardrails and controls banner
+1. Click on ```Content Filters``` above the Guardrails and controls banner. Click the Create content filter button
 
     ![Alt text](/media/CH1_ContentFilter.png "ContentFilter")
 
-1. Setup the Content filter thru the wizard.  It will ask you for Input filters, output filters and connection.  Here is a review of the setup.
+1. Setup the Content filter thru the wizard.  It will ask you for Input filters, output filters and connection.  Review and accept the default settings. Here is a review of the setup. Click Create filter
 
     ![Alt text](/media/CH1_Reviews.png "ContentFilterReview")
 

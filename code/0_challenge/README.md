@@ -11,9 +11,9 @@ We will set up the initial environment for you to build on top of during your Mi
 <br>
 <br>
 
-## Prerequisites for Local Environments (Linux, Windows or MAC)
+## Prerequisites for Local Environments (Linux, Windows or Mac)
 
-1. A computer running Windows 11, macOS, or Linux.  Running on your local PC.
+1. A computer running Windows 11, macOS, or Linux.  
 1. An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/).
 1. Install the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 1. [Azure Developer CLI (azd)](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
@@ -54,11 +54,9 @@ You can run this Microhack either on your local computer or in GitHub Codespaces
 
 ## Setup your Development Environment on Codespaces (recommended)
 
-For Codespaces, go into your web browser and login to GitHub.
+Use the below button to open the Create Codespace page in a new tab. Use the default configuration.
 
-1. <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your GitHub account. This is requirement to FORK the repo into your account for CH3 due to GitHub Actions.
-        
-1.  `Click on Code` (Green) button and click on `+` button (Create a codespaces on main).  This will take a 10 minutes to provision a Codespaces instance.  For Codespaces only, it will setup your virtual environment and grant write permissions to necessary files.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/microhacks-trust-ai?quickstart=1)
 
 1. At the terminal window confirm the home directory ```/microhacks-trust-ai```
 
@@ -79,7 +77,7 @@ For Codespaces, go into your web browser and login to GitHub.
 
     a. Open a terminal window for local deployments and confirm prerequisites are complete
         
-    * <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your GitHub account.  This is a requirement to FORK the repo into your account for CH3 due to GitHub Actions.
+    * <u>**Fork**</u> the [Microhack Trustworthy AI](https://github.com/microsoft/microhacks-trust-ai) repo into your GitHub account.  This is a requirement to fork the repo into your account for CH3 due to GitHub Actions.
         
     * Clone the <u>**FORKED REPO**</u> in your GitHub account to your local environment by running the following command:
 
@@ -166,7 +164,7 @@ A pre-requisite before running AZD UP is to activate your Python Virtual environ
 
     This will provision Azure resources and deploy this sample to those resources, including building the search index based on the files found in the `./data` folder.  
 
-1. Open URL for RAGCHAT application printed in the terminal console similar to the below picture. Ask it a few questions to ensure it return results.<br>
+1. Open URL for RAGCHAT application printed in the terminal console similar to the below picture. <br>
 
 ![Alt text](/media/ragchatterminal.png "RAGCHAT Terminal")
 
